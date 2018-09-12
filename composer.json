@@ -1,6 +1,6 @@
 {
-    "name": "janusz/chgst-bundle-example",
-    "license": "proprietary",
+    "name": "chgst/chgst-bundle-example",
+    "license": "MIT",
     "type": "project",
     "autoload": {
         "psr-4": {
@@ -13,7 +13,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "spec/"
         },
         "files": [
             "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php"
