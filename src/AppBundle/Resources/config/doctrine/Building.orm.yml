@@ -1,0 +1,11 @@
+AppBundle\Entity\Building:
+  type: entity
+  id:
+    id:
+      type: string
+      id: true
+      generator:
+        strategy: none
+  fields:
+    persons:
+      type: json_array

@@ -1,0 +1,34 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col">
+            <h3>Buildings</h3>
+
+            <table class="table table-striped mt-5">
+                <tr>
+                    <th>Id</th>
+                    <th>Number of People</th>
+                    <th>Names</th>
+                </tr>
+
+                {% for building in buildings %}
+                    <tr>
+                        <td>{{ building.id }}</td>
+                        <td>{{ building.persons|length }}</td>
+                        <td>{{ building.persons|json_encode }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+            <ul>
+                <li><a href="{{ path('enter') }}">New Entry</a></li>
+                <li><a href="{{ path('exit') }}">New Exit</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+{% endblock %}

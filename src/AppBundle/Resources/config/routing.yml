@@ -1,0 +1,11 @@
+homepage:
+  path: /
+  defaults: { _controller: AppBundle:Building:default }
+
+enter:
+  path: /enter
+  defaults: { _controller: AppBundle:BuildingEnter:default }
+
+exit:
+  path: /exit
+  defaults: { _controller: AppBundle:BuildingExit:default }
