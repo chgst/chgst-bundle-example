@@ -3,7 +3,8 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Building;
-use Doctrine\ORM\EntityManagerInterface;
+use Changeset\Command\Command;
+use Changeset\Communication\CommandBusInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,21 +18,21 @@ class BuildingEnterController
     /** @var RouterInterface */
     private $router;
 
-    /** @var EntityManagerInterface */
-    private $em;
+    /** @var CommandBusInterface */
+    private $commandBus;
 
     /**
      * BuildingEnterController constructor.
      *
      * @param FormInterface $form
      * @param RouterInterface $router
-     * @param EntityManagerInterface $em
+     * @param CommandBusInterface $commandBus
      */
-    public function __construct(FormInterface $form, RouterInterface $router, EntityManagerInterface $em)
+    public function __construct(FormInterface $form, RouterInterface $router, CommandBusInterface $commandBus)
     {
         $this->form = $form;
         $this->router = $router;
-        $this->em = $em;
+        $this->commandBus = $commandBus;
     }
 
     public function defaultAction(Request $request)
@@ -42,18 +43,14 @@ class BuildingEnterController
         {
             $id = $this->form->get('id')->getData();
 
-            $building = $this->em->getRepository(Building::class)->find($id);
-
-            if ( ! $building)
-            {
-                $building = new Building();
-                $building->setId($id);
-            }
-
-            $building->addPerson($this->form->get('username')->getData());
-
-            $this->em->persist($building);
-            $this->em->flush();
+            $this->commandBus->dispatch(
+                new Command(
+                    'enter_building',
+                    Building::class,
+                    $id,
+                    ['username' => $this->form->get('username')->getData()]
+                )
+            );
 
             return new RedirectResponse($this->router->generate('homepage'));
         }

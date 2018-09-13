@@ -4,6 +4,7 @@ namespace spec\AppBundle\Controller;
 
 use AppBundle\Controller\BuildingEnterController;
 use AppBundle\Entity\Building;
+use Changeset\Communication\CommandBusInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use PhpSpec\ObjectBehavior;
@@ -16,9 +17,9 @@ use Symfony\Component\Routing\RouterInterface;
 
 class BuildingEnterControllerSpec extends ObjectBehavior
 {
-    function let(FormInterface $form, RouterInterface $router, EntityManagerInterface $em)
+    function let(FormInterface $form, RouterInterface $router, CommandBusInterface $commandBus)
     {
-        $this->beConstructedWith($form, $router, $em);
+        $this->beConstructedWith($form, $router, $commandBus);
     }
 
     function it_is_initializable()
@@ -30,9 +31,7 @@ class BuildingEnterControllerSpec extends ObjectBehavior
         Request $request,
         FormInterface $form,
         RouterInterface $router,
-        EntityManagerInterface $em,
-        EntityRepository $repository,
-        Building $building
+        CommandBusInterface $commandBus
     )
     {
         $form->handleRequest($request)->shouldBeCalled();
@@ -44,13 +43,9 @@ class BuildingEnterControllerSpec extends ObjectBehavior
         $form->isValid()->willReturn(true);
 
         $form->get(Argument::any())->shouldBeCalled()->willReturn($form);
-        $form->getData()->shouldBeCalled();
+        $form->getData()->shouldBeCalled()->willReturn('some value');
 
-        $em->getRepository(Argument::any())->willReturn($repository);
-        $em->persist(Argument::any())->shouldBeCalled();
-        $em->flush()->shouldBeCalled();
-
-        $repository->find(Argument::any())->willReturn($building);
+        $commandBus->dispatch(Argument::any())->shouldBeCalled();
 
         $router->generate(Argument::any())->shouldBeCalled()->willReturn('/');
 

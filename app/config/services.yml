@@ -81,3 +81,21 @@ services:
             $form: '@form.building_exit'
         tags: ['controller.service_arguments']
 
+    Changeset\Event\RepositoryInterface:
+        public: true
+        class: Changeset\Event\ObjectRepository
+        arguments: [ '@doctrine.orm.entity_manager','AppBundle\Entity\Event']
+
+    AppBundle\EventListener\PayloadNormalizerSubscriber:
+        public: true
+        autowire: true
+        class: AppBundle\EventListener\PayloadNormalizerSubscriber
+        tags:
+            - { name: kernel.event_subscriber }
+
+    AppBundle\Changeset\Projector\:
+        resource: '%kernel.root_dir%/../src/AppBundle/Changeset/Projector'
+        public: true
+        autowire: true
+        tags: [ 'changeset.event.projector' ]
+

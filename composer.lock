@@ -4,8 +4,189 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1daf1dc25f12302ba730e0a53e5da65a",
+    "content-hash": "f2c33add96806dc546b6ab7858f7c479",
     "packages": [
+        {
+            "name": "chgst/chgst",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chgst/chgst.git",
+                "reference": "e50518e4fe7186dcbe1346d44b26e067da4533aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chgst/chgst/zipball/e50518e4fe7186dcbe1346d44b26e067da4533aa",
+                "reference": "e50518e4fe7186dcbe1346d44b26e067da4533aa",
+                "shasum": ""
+            },
+            "require": {
+                "chgst/common": "@dev"
+            },
+            "require-dev": {
+                "leanphp/phpspec-code-coverage": "^4.2",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpspec/phpspec": "^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "spec/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Lightweight CQRS/ES implementation",
+            "support": {
+                "source": "https://github.com/chgst/chgst/tree/develop",
+                "issues": "https://github.com/chgst/chgst/issues"
+            },
+            "time": "2018-08-30T10:28:45+00:00"
+        },
+        {
+            "name": "chgst/chgst-bundle",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chgst/chgst-bundle.git",
+                "reference": "6c9ac941cacd1d7c82824eabb06b620c29a25aee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chgst/chgst-bundle/zipball/6c9ac941cacd1d7c82824eabb06b620c29a25aee",
+                "reference": "6c9ac941cacd1d7c82824eabb06b620c29a25aee",
+                "shasum": ""
+            },
+            "require": {
+                "chgst/chgst": "@dev",
+                "chgst/common": "@dev",
+                "php": "^7.2",
+                "symfony/framework-bundle": "~2.3||~3||~4",
+                "symfony/security": "~2.3||~3||~4"
+            },
+            "require-dev": {
+                "leanphp/phpspec-code-coverage": "^4.2",
+                "pdepend/pdepend": "^2.5",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phploc/phploc": "^4.0",
+                "phpmd/phpmd": "^2.6",
+                "phpspec/phpspec": "^4.3",
+                "sebastian/phpcpd": "^4.0",
+                "symfony/expression-language": "~2.3||~3",
+                "symfony/templating": "~2.3||~3||~4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Changeset\\ChangesetBundle\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "spec/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Symfony bundle for chgst",
+            "support": {
+                "source": "https://github.com/chgst/chgst-bundle/tree/develop",
+                "issues": "https://github.com/chgst/chgst-bundle/issues"
+            },
+            "time": "2018-09-12T15:09:29+00:00"
+        },
+        {
+            "name": "chgst/common",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chgst/common.git",
+                "reference": "f1e91cfb859ed82e91c2051a34f3d7a6cc3411c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chgst/common/zipball/f1e91cfb859ed82e91c2051a34f3d7a6cc3411c0",
+                "reference": "f1e91cfb859ed82e91c2051a34f3d7a6cc3411c0",
+                "shasum": ""
+            },
+            "require-dev": {
+                "doctrine/common": "^2.9",
+                "doctrine/dbal": "^2.8",
+                "doctrine/orm": "^2.6",
+                "phpspec/phpspec": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "spec/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Set of common classes and interfaces for chgset project",
+            "support": {
+                "source": "https://github.com/chgst/common/tree/develop",
+                "issues": "https://github.com/chgst/common/issues"
+            },
+            "time": "2018-08-30T10:10:25+00:00"
+        },
+        {
+            "name": "chgst/persistence-doctrine",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chgst/persistence-doctrine.git",
+                "reference": "c09b7608d2022909a9706a935a97c546449ced79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chgst/persistence-doctrine/zipball/c09b7608d2022909a9706a935a97c546449ced79",
+                "reference": "c09b7608d2022909a9706a935a97c546449ced79",
+                "shasum": ""
+            },
+            "require": {
+                "chgst/common": "@dev",
+                "doctrine/common": "^2"
+            },
+            "require-dev": {
+                "leanphp/phpspec-code-coverage": "^4.2",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpspec/phpspec": "^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "spec/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Doctrine implementation for data store",
+            "support": {
+                "source": "https://github.com/chgst/persistence-doctrine/tree/develop",
+                "issues": "https://github.com/chgst/persistence-doctrine/issues"
+            },
+            "time": "2018-08-30T12:46:02+00:00"
+        },
         {
             "name": "composer/ca-bundle",
             "version": "1.1.2",
@@ -3417,7 +3598,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "chgst/common": 20,
+        "chgst/chgst": 20,
+        "chgst/chgst-bundle": 20,
+        "chgst/persistence-doctrine": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

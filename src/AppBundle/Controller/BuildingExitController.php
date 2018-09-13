@@ -3,11 +3,11 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Building;
-use Doctrine\ORM\EntityManagerInterface;
+use Changeset\Command\Command;
+use Changeset\Communication\CommandBusInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\RouterInterface;
 
 class BuildingExitController
@@ -18,21 +18,21 @@ class BuildingExitController
     /** @var RouterInterface */
     private $router;
 
-    /** @var EntityManagerInterface */
-    private $em;
+    /** @var CommandBusInterface */
+    private $commandBus;
 
     /**
-     * BuildingEnterController constructor.
+     * BuildingExitController constructor.
      *
      * @param FormInterface $form
      * @param RouterInterface $router
-     * @param EntityManagerInterface $em
+     * @param CommandBusInterface $commandBus
      */
-    public function __construct(FormInterface $form, RouterInterface $router, EntityManagerInterface $em)
+    public function __construct(FormInterface $form, RouterInterface $router, CommandBusInterface $commandBus)
     {
         $this->form = $form;
         $this->router = $router;
-        $this->em = $em;
+        $this->commandBus = $commandBus;
     }
 
     public function defaultAction(Request $request)
@@ -43,17 +43,14 @@ class BuildingExitController
         {
             $id = $this->form->get('id')->getData();
 
-            $building = $this->em->getRepository(Building::class)->find($id);
-
-            if ( ! $building)
-            {
-                throw new NotFoundHttpException();
-            }
-
-            $building->removePerson($this->form->get('username')->getData());
-
-            $this->em->persist($building);
-            $this->em->flush();
+            $this->commandBus->dispatch(
+                new Command(
+                    'exit_building',
+                    Building::class,
+                    $id,
+                    ['username' => $this->form->get('username')->getData()]
+                )
+            );
 
             return new RedirectResponse($this->router->generate('homepage'));
         }

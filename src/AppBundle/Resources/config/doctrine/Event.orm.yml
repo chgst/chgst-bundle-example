@@ -1,0 +1,26 @@
+AppBundle\Entity\Event:
+  type: entity
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+    aggregateType:
+      type: string
+      name: aggregate_type
+    aggregateId:
+      type: string
+      name: aggregate_id
+    payload:
+      type: string
+      length: 4000
+    createdAt:
+      type: datetime
+      name: created_at
+    createdBy:
+      type: string
+      name: created_by
+
