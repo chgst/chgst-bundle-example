@@ -1,0 +1,17 @@
+AppBundle\Entity\History:
+  type: entity
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    building:
+      type: string
+    date:
+      type: datetime
+    numberOfPeople:
+      type: integer
+      name: number_of_people
+
+

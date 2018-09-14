@@ -1,0 +1,10 @@
+AppBundle\Entity\History:
+  attributes:
+    id:
+      groups: [ 'api' ]
+    date:
+      groups: [ 'api' ]
+    building:
+      groups: [ 'api' ]
+    numberOfPeople:
+      groups: [ 'api' ]

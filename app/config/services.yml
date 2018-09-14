@@ -1,7 +1,7 @@
 # Learn more about services, parameters and containers at
 # https://symfony.com/doc/current/service_container.html
 parameters:
-    priorities: [ 'text/html', 'application/json' ]
+    priorities: [ 'application/json', 'text/html' ]
     form.building_enter.type.class: AppBundle\Form\BuildingEnterForm
     form.building_exit.type.class: AppBundle\Form\BuildingExitForm
 
