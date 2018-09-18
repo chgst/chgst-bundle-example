@@ -44,6 +44,7 @@ class BuildingEnterProjector implements ProjectorInterface
             $building->addPerson($payload['username']);
         }
 
+        $this->em->detach($event);
         $this->em->persist($building);
         $this->em->flush();
     }

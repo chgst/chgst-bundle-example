@@ -40,6 +40,7 @@ class BuildingExitProjector implements ProjectorInterface
             $building->removePerson($payload['username']);
         }
 
+        $this->em->detach($event);
         $this->em->persist($building);
         $this->em->flush();
     }

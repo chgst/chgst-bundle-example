@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chgst/chgst-bundle.git",
-                "reference": "42836d5593196d7106d60571404b131ce902eb6b"
+                "reference": "89f0a31bebbb3cc63edcfced332ce5f6ba484bf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chgst/chgst-bundle/zipball/42836d5593196d7106d60571404b131ce902eb6b",
-                "reference": "42836d5593196d7106d60571404b131ce902eb6b",
+                "url": "https://api.github.com/repos/chgst/chgst-bundle/zipball/89f0a31bebbb3cc63edcfced332ce5f6ba484bf7",
+                "reference": "89f0a31bebbb3cc63edcfced332ce5f6ba484bf7",
                 "shasum": ""
             },
             "require": {
@@ -100,7 +100,7 @@
                 "source": "https://github.com/chgst/chgst-bundle/tree/develop",
                 "issues": "https://github.com/chgst/chgst-bundle/issues"
             },
-            "time": "2018-09-17T14:44:05+00:00"
+            "time": "2018-09-18T10:28:24+00:00"
         },
         {
             "name": "chgst/common",
@@ -149,12 +149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chgst/persistence-doctrine.git",
-                "reference": "329b89e02ce74c977e6ecfe1760c29a1308268cf"
+                "reference": "64d157d3118038893ea1b900f5bf70f4c43407a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chgst/persistence-doctrine/zipball/329b89e02ce74c977e6ecfe1760c29a1308268cf",
-                "reference": "329b89e02ce74c977e6ecfe1760c29a1308268cf",
+                "url": "https://api.github.com/repos/chgst/persistence-doctrine/zipball/64d157d3118038893ea1b900f5bf70f4c43407a2",
+                "reference": "64d157d3118038893ea1b900f5bf70f4c43407a2",
                 "shasum": ""
             },
             "require": {
@@ -187,7 +187,7 @@
                 "source": "https://github.com/chgst/persistence-doctrine/tree/develop",
                 "issues": "https://github.com/chgst/persistence-doctrine/issues"
             },
-            "time": "2018-09-17T14:10:31+00:00"
+            "time": "2018-09-18T10:10:55+00:00"
         },
         {
             "name": "composer/ca-bundle",

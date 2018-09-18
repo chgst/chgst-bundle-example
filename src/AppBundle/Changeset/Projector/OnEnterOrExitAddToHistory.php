@@ -45,6 +45,7 @@ class OnEnterOrExitAddToHistory implements ProjectorInterface
             $history->setDate($event->getCreatedAt());
         }
 
+        $this->em->detach($event);
         $this->em->persist($history);
         $this->em->flush();
     }
