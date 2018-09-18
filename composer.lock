@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2c33add96806dc546b6ab7858f7c479",
+    "content-hash": "5a0ec61361559de13f4565c32e9abac4",
     "packages": [
         {
             "name": "chgst/chgst",
@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chgst/chgst-bundle.git",
-                "reference": "6c9ac941cacd1d7c82824eabb06b620c29a25aee"
+                "reference": "42836d5593196d7106d60571404b131ce902eb6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chgst/chgst-bundle/zipball/6c9ac941cacd1d7c82824eabb06b620c29a25aee",
-                "reference": "6c9ac941cacd1d7c82824eabb06b620c29a25aee",
+                "url": "https://api.github.com/repos/chgst/chgst-bundle/zipball/42836d5593196d7106d60571404b131ce902eb6b",
+                "reference": "42836d5593196d7106d60571404b131ce902eb6b",
                 "shasum": ""
             },
             "require": {
@@ -100,7 +100,7 @@
                 "source": "https://github.com/chgst/chgst-bundle/tree/develop",
                 "issues": "https://github.com/chgst/chgst-bundle/issues"
             },
-            "time": "2018-09-12T15:09:29+00:00"
+            "time": "2018-09-17T14:44:05+00:00"
         },
         {
             "name": "chgst/common",
@@ -108,12 +108,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chgst/common.git",
-                "reference": "f1e91cfb859ed82e91c2051a34f3d7a6cc3411c0"
+                "reference": "8a1633d42d7bac984c52666c67737056b886231f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chgst/common/zipball/f1e91cfb859ed82e91c2051a34f3d7a6cc3411c0",
-                "reference": "f1e91cfb859ed82e91c2051a34f3d7a6cc3411c0",
+                "url": "https://api.github.com/repos/chgst/common/zipball/8a1633d42d7bac984c52666c67737056b886231f",
+                "reference": "8a1633d42d7bac984c52666c67737056b886231f",
                 "shasum": ""
             },
             "require-dev": {
@@ -141,7 +141,7 @@
                 "source": "https://github.com/chgst/common/tree/develop",
                 "issues": "https://github.com/chgst/common/issues"
             },
-            "time": "2018-08-30T10:10:25+00:00"
+            "time": "2018-09-17T10:40:42+00:00"
         },
         {
             "name": "chgst/persistence-doctrine",
@@ -149,12 +149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chgst/persistence-doctrine.git",
-                "reference": "c09b7608d2022909a9706a935a97c546449ced79"
+                "reference": "329b89e02ce74c977e6ecfe1760c29a1308268cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chgst/persistence-doctrine/zipball/c09b7608d2022909a9706a935a97c546449ced79",
-                "reference": "c09b7608d2022909a9706a935a97c546449ced79",
+                "url": "https://api.github.com/repos/chgst/persistence-doctrine/zipball/329b89e02ce74c977e6ecfe1760c29a1308268cf",
+                "reference": "329b89e02ce74c977e6ecfe1760c29a1308268cf",
                 "shasum": ""
             },
             "require": {
@@ -162,6 +162,8 @@
                 "doctrine/common": "^2"
             },
             "require-dev": {
+                "doctrine/mongodb-odm": "^1.2",
+                "doctrine/orm": "^2.6",
                 "leanphp/phpspec-code-coverage": "^4.2",
                 "php-coveralls/php-coveralls": "^2.1",
                 "phpspec/phpspec": "^4.0"
@@ -185,7 +187,7 @@
                 "source": "https://github.com/chgst/persistence-doctrine/tree/develop",
                 "issues": "https://github.com/chgst/persistence-doctrine/issues"
             },
-            "time": "2018-08-30T12:46:02+00:00"
+            "time": "2018-09-17T14:10:31+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -2852,6 +2854,127 @@
     ],
     "packages-dev": [
         {
+            "name": "doctrine/data-fixtures",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/data-fixtures.git",
+                "reference": "3a1e2c3c600e615a2dffe56d4ca0875cc5233e0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/3a1e2c3c600e615a2dffe56d4ca0875cc5233e0a",
+                "reference": "3a1e2c3c600e615a2dffe56d4ca0875cc5233e0a",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "~2.2",
+                "php": "^7.1"
+            },
+            "conflict": {
+                "doctrine/phpcr-odm": "<1.3.0"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^2.5.4",
+                "doctrine/orm": "^2.5.4",
+                "phpunit/phpunit": "^7.0"
+            },
+            "suggest": {
+                "alcaeus/mongo-php-adapter": "For using MongoDB ODM with PHP 7",
+                "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
+                "doctrine/orm": "For loading ORM fixtures",
+                "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\DataFixtures\\": "lib/Doctrine/Common/DataFixtures"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                }
+            ],
+            "description": "Data Fixtures for all Doctrine Object Managers",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database"
+            ],
+            "time": "2018-03-20T09:06:36+00:00"
+        },
+        {
+            "name": "doctrine/doctrine-fixtures-bundle",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
+                "reference": "7fc29d2b18c61ed99826b21fbfd1ff9969cc2e7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/DoctrineFixturesBundle/zipball/7fc29d2b18c61ed99826b21fbfd1ff9969cc2e7f",
+                "reference": "7fc29d2b18c61ed99826b21fbfd1ff9969cc2e7f",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/data-fixtures": "~1.0",
+                "doctrine/doctrine-bundle": "~1.0",
+                "php": ">=5.5.9|^7.0",
+                "symfony/doctrine-bridge": "~2.7|~3.0|~4.0",
+                "symfony/framework-bundle": "^3.3|^4.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^3.3"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Bundle\\FixturesBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Doctrine Project",
+                    "homepage": "http://www.doctrine-project.org"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony DoctrineFixturesBundle",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "Fixture",
+                "persistence"
+            ],
+            "time": "2017-12-04T20:26:38+00:00"
+        },
+        {
             "name": "phpdocumentor/reflection-common",
             "version": "1.0.1",
             "source": {
@@ -3607,7 +3730,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.5.9"
+        "php": ">=5.5.9",
+        "ext-json": "*"
     },
     "platform-dev": []
 }
